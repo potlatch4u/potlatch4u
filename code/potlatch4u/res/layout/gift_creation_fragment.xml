@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/GiftCreateRelativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/gray"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/giftCreateButtonsRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/gift_create_button_save"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            android:text="@string/gift_create_button_label_create" />
+
+        <Button
+            android:id="@+id/gift_create_button_reset"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/gift_create_button_cancel"
+            android:text="@string/gift_create_button_label_clear" />
+
+        <Button
+            android:id="@+id/gift_create_button_cancel"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="21dp"
+            android:text="@string/gift_create_button_label_cancel" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/giftCreateButtonsRelativeLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="10dp" >
+
+        <RelativeLayout
+            android:id="@+id/giftRelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/gift_create_label_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="@string/gift_create_label_title" />
+
+            <EditText
+                android:id="@+id/gift_create_value_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:layout_below="@+id/gift_create_label_title"
+                android:text="@string/gift_create_title_default_value" >
+                <requestFocus />
+            </EditText>
+
+            <!-- body label/value pair -->
+
+            <Button
+                android:id="@+id/gift_create_value_image_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/gift_create_value_title"
+                android:onClick="addPhotoClicked"
+                android:text="@string/btn_add_photo" />
+
+            <ImageView
+                android:id="@+id/gift_photo_view"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/gift_create_value_image_button"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@string/gift_photo_default"
+                android:src="@drawable/ic_launcher"
+                android:text="@string/gift_view_edittext_image_meta_data_default_value"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/gift_create_label_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/gift_photo_view"
+                android:text="@string/gift_create_label_description" />
+
+            <EditText
+                android:id="@+id/gift_create_value_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/gift_create_label_description"
+                android:inputType="textMultiLine"
+                android:text="@string/gift_create_body_default_value" />
+            
+            <TextView
+                android:id="@+id/gift_create_value_image_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/gift_create_value_description"
+                android:text=""
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <include
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        layout="@layout/button_bar" />
+
+</RelativeLayout>

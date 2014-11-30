@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="@+id/pref_screen" >
+
+    <ListPreference
+        android:defaultValue="1 minute"
+        android:entries="@array/pref_touch_count_update_interval_display_value"
+        android:entryValues="@array/pref_touch_count_update_interval_value"
+        android:summary="@string/pref_summary_touch_count_update_interval"
+        android:key="@string/pref_key_touch_count_update_interval"
+        android:title="@string/pref_name_touch_count_update_interval" >
+    </ListPreference>
+
+    <SwitchPreference
+        android:defaultValue="@bool/isInappriateGiftsShownDefaultValue"
+        android:key="@string/pref_key_show_bad_gifts"
+        android:switchTextOn="on"
+        android:switchTextOff="off"
+        android:summaryOn="@string/pref_summary_show_bad_gifts_on"
+        android:summaryOff="@string/pref_summary_show_bad_gifts_off"
+        android:title="@string/pref_name_show_bad_gifts" />
+
+</PreferenceScreen>

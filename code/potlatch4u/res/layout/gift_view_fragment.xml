@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/GiftViewRelativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/giftViewButtonsRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/button_gift_view_touched"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:padding="3dp"
+            android:text="@string/gift_view_button_label_touched"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Button
+            android:id="@+id/button_gift_view_to_delete"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/button_gift_view_report"
+            android:padding="3dp"
+            android:text="@string/gift_view_button_label_delete"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <Button
+            android:id="@+id/button_gift_view_report"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:padding="3dp"
+            android:text="@string/gift_view_button_label_report"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="640dp"
+        android:layout_below="@+id/giftViewButtonsRelativeLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="55dp" >
+
+        <RelativeLayout
+            android:id="@+id/GiftViewRelativeLayoutInner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <!-- title -->
+
+            <TextView
+                android:id="@+id/gift_view_value_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="6dp"
+                android:text="@string/gift_view_edittext_title_default_value"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <!-- touched-count -->
+
+            <RelativeLayout
+                android:id="@+id/GiftViewRelativeTouchedCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/gift_view_value_title"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/gift_view_value_touched_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:padding="6dp"
+                    android:text="@string/gift_view_text_touched_count"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+            </RelativeLayout>
+
+            <!-- description -->
+
+            <TextView
+                android:id="@+id/gift_view_value_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/GiftViewRelativeTouchedCount"
+                android:padding="6dp"
+                android:text="@string/gift_view_edittext_body_default_value"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+            <!-- imageName -->
+
+            <ImageView
+                android:id="@+id/gift_view_value_image"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/gift_view_value_description"
+                android:contentDescription="@string/gift_view_image_content_description"
+                android:padding="6dp"
+                android:src="@drawable/ic_launcher"
+                android:text="@string/gift_view_edittext_image_meta_data_default_value"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/gift_view_label_image_path"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/gift_view_value_image"
+                android:layout_gravity="left"
+                android:layout_marginTop="10dp"
+                android:padding="6dp"
+                android:text="@string/gift_view_label_image_meta_data"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        layout="@layout/button_bar" />
+
+</RelativeLayout>

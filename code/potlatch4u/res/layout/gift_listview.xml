@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/giftListViewLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- Row for Buttons -->
+
+    <LinearLayout
+            android:id="@+id/gift_listview_top_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:padding="3dp" >
+
+        <Button
+            android:id="@+id/gift_listview_create"
+            android:layout_width="0dip"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:onClick="test"
+            android:text="@string/gift_list_button_label_add" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/gift_listview_tags_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gift_listview_top_buttons"
+        android:ems="10"
+        android:hint="@string/gift_list_filter_hint" >
+
+        <requestFocus />
+    </EditText>
+
+    <ListView
+        android:id="@+id/android:list"
+        android:layout_below="@+id/gift_listview_tags_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+ 
+    <include
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        layout="@layout/button_bar" />
+    
+</RelativeLayout>
